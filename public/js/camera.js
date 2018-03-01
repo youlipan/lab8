@@ -7,6 +7,18 @@ function initCamera() {
           $('#camera-canvas'),
           $('#camera-button'));
 }
+ /* function enableCamera() {
+  $('#camera-video').show();
+  $('#camera-button').show();
+  $('#camera-change').hide();
+}
+
+  function disableCamera() {
+  $('#camera-video').hide();
+  $('#camera-button').hide();
+  $('#camera-change').show();
+}*/
+
 
 function capture(video, canvas, snapshotButton) {
   //Adopted from https://dev.opera.com/articles/media-capture-in-mobile-browsers/
@@ -37,9 +49,11 @@ function capture(video, canvas, snapshotButton) {
     console.log('Capture failed');
   };
 
+
   //Register the success and error callbacks with getUserMedia.
   navigator.getUserMedia({ 'video': true },
       successCallback, errorCallback);
+
 
 };
 
